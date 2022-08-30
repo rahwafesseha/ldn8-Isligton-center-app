@@ -6,7 +6,7 @@ import App from "./App";
 
 const domain = process.env.REACT_APP_DOMAIN;
 const clientId = process.env.REACT_APP_CLIENT_ID;
-const redirectUri = window.location.origin;
+const redirectUri = `${window.location.origin}/teacher`;
 
 ReactDOM.render(
   <Auth0Provider domain={domain} clientId={clientId} redirectUri={redirectUri}>

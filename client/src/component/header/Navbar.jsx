@@ -30,15 +30,7 @@ const Navbar = () => {
             <li className="teacher-link">Teacher</li>
           </Link>
           {!isAuthenticated ? (
-            <button
-              onClick={() =>
-                loginWithRedirect({
-                  returnTo: `${window.location.origin}/teacher`,
-                })
-              }
-            >
-              Login
-            </button>
+            <button onClick={() => loginWithRedirect()}>Login</button>
           ) : (
             <button
               onClick={() => logout({ returnTo: window.location.origin })}
@@ -48,6 +40,7 @@ const Navbar = () => {
           )}
         </ul>
 
+        
         <span>
           <div className="hamburger" onClick={handleNav}>
             {!nav ? (
