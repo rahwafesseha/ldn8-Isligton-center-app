@@ -3,10 +3,10 @@ import MarkDown from "markdown-to-jsx";
 import { useAuth0 } from "@auth0/auth0-react";
 //import Card from "./Card";
 //import { posts } from "../../data";
-import "./Home.css"
+import "./Home.css";
 
 const Home = () => {
-   const { loginWithRedirect, isAuthenticated, logout} = useAuth0();
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   const [landing, setLanding] = useState("");
   const file_name = "landing.md";
 
@@ -22,17 +22,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <div className="home">
-        {posts.map((post) => (
-          <Card key={post.id} post={post} />
-        ))}
-      </div> */}
-      {/* {!isAuthenticated ? (
-        <button onClick={() => loginWithRedirect()}>Login</button>
-      ) : (
-        <button onClick={() => logout({returnTo:window.location.origin})}>Logout</button>
-      )} */}
-<p>secret: {process.env.REACT_APP_DOMAIN}</p>
       <div className="showcase">
         <div className="container">
           <h1>Islington Centre for Refugees and Migrants</h1>

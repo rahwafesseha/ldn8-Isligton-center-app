@@ -30,7 +30,15 @@ const Navbar = () => {
             <li className="teacher-link">Teacher</li>
           </Link>
           {!isAuthenticated ? (
-            <button onClick={() => loginWithRedirect()}>Login</button>
+            <button
+              onClick={() =>
+                loginWithRedirect({
+                  returnTo: `${window.location.origin}/teacher`,
+                })
+              }
+            >
+              Login
+            </button>
           ) : (
             <button
               onClick={() => logout({ returnTo: window.location.origin })}
@@ -40,17 +48,6 @@ const Navbar = () => {
           )}
         </ul>
 
-        {/* <div className="nav-icon">
-          {isAuthenticated ? (
-            <button className="log-btn" onClick={() => logout()}>
-              Log Out
-            </button>
-          ) : (
-            <button className="log-btn" onClick={() => loginWithRedirect()}>
-              Log In
-            </button>
-          )}
-        </div> */}
         <span>
           <div className="hamburger" onClick={handleNav}>
             {!nav ? (
