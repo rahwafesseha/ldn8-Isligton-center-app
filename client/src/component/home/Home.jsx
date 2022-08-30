@@ -32,7 +32,7 @@ const Home = () => {
       ) : (
         <button onClick={() => logout({returnTo:window.location.origin})}>Logout</button>
       )} */}
-<p>secret: {process.env.REACT_APP_CLIENT_ID}</p>
+<p>secret: {process.env.REACT_APP_DOMAIN}</p>
       <div className="showcase">
         <div className="container">
           <h1>Islington Centre for Refugees and Migrants</h1>
