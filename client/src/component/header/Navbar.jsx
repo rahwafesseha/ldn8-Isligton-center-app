@@ -29,6 +29,8 @@ const Navbar = () => {
           <Link className="link" to="/teacher">
             <li className="teacher-link">Teacher</li>
           </Link>
+        </ul>
+        <div>
           {!isAuthenticated ? (
             <button onClick={() => loginWithRedirect()}>Login</button>
           ) : (
@@ -38,9 +40,8 @@ const Navbar = () => {
               Logout
             </button>
           )}
-        </ul>
+        </div>
 
-        
         <span>
           <div className="hamburger" onClick={handleNav}>
             {!nav ? (
@@ -63,7 +64,6 @@ const Navbar = () => {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <li>Teacher</li>
-                <li>try</li>
               </Link>
             </ul>
           </div>
