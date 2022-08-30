@@ -32,9 +32,12 @@ const Navbar = () => {
         </ul>
         <div>
           {!isAuthenticated ? (
-            <button onClick={() => loginWithRedirect()}>Login</button>
+            <button className="log-btn" onClick={() => loginWithRedirect()}>
+              Login
+            </button>
           ) : (
             <button
+              className="log-btn"
               onClick={() => logout({ returnTo: window.location.origin })}
             >
               Logout
