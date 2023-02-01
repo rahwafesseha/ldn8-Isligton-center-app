@@ -25,40 +25,32 @@ function EditLesson() {
     console.log(inputs);
   };
   const handleDelete = (Qid) => {
-    axios
-      .delete(`https://ldn8-islington.herokuapp.com/questions/${Qid}`)
-      .then(() => {
-        setLoad(true);
-      }, []);
+    axios.delete(`http://localhost:9003/questions/${Qid}`).then(() => {
+      setLoad(true);
+    }, []);
   };
   const editContent = (event) => {
     event.preventDefault();
     alert("You have submitted the edited form.");
 
     axios
-      .put(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`, inputs)
+      .put(`http://localhost:9003/lessons/${lesson_id}`, inputs)
       .then(() => (window.location = "/teacher"));
   };
 
   useEffect(() => {
-    axios
-      .get(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`)
-      .then((res) => {
-        setInputs(res.data[0]);
-      });
+    axios.get(`http://localhost:9003/lessons/${lesson_id}`).then((res) => {
+      setInputs(res.data[0]);
+    });
   }, [lesson_id]);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://ldn8-islington.herokuapp.com/questions/lessons/${lesson_id}`
-      )
-      .then(
-        (res) => {
-          setQuestions(res.data);
-        },
-        [lesson_id]
-      );
+    axios.get(`http://localhost:9003/questions/lessons/${lesson_id}`).then(
+      (res) => {
+        setQuestions(res.data);
+      },
+      [lesson_id]
+    );
   }, [lesson_id, load]);
 
   return (

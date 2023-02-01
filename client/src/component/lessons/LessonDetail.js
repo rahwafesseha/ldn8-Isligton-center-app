@@ -13,7 +13,7 @@ const LessonDetail = ({ LessonsData }) => {
 
   useEffect(() => {
     axios
-      .get(`https://ldn8-islington.herokuapp.com/lessons/${id}`)
+      .get(`http://localhost:9003/lessons/${id}`)
       .then((res) => setLessons(res.data));
   }, [id]);
   return lessons

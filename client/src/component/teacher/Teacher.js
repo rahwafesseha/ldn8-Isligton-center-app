@@ -12,22 +12,22 @@ function Teacher() {
   const [lessons, setLessons] = useState([]);
 
   useEffect(() => {
-    axios.get("https://ldn8-islington.herokuapp.com/lessons/").then((res) => {
+    axios.get("http://localhost:9003/lessons/").then((res) => {
+      console.log("l", res.data)
       setLessons(res.data);
-      setAllLessons(res.data);
+          console.log("a", res.data);
+     setAllLessons(res.data);
     });
   }, []);
 
   const deleteLessons = (arrLesson) => {
     axios
-      .delete(`https://ldn8-islington.herokuapp.com/lessons/${arrLesson.id}`)
+      .delete(`http://localhost:9003/lessons/${arrLesson.id}`)
       .then((res) => {
         if (res.status === 200) {
-          axios
-            .get("https://ldn8-islington.herokuapp.com/lessons/")
-            .then((res) => {
-              setLessons(res.data);
-            });
+          axios.get("http://localhost:9003/lessons/").then((res) => {
+            setLessons(res.data);
+          });
         }
       });
   };

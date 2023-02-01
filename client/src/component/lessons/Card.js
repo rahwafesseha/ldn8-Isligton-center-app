@@ -8,7 +8,7 @@ const Card = () => {
 
   useEffect(() => {
     axios
-      .get("https://ldn8-islington.herokuapp.com/lessons")
+      .get("http://localhost:9003/lessons")
       .then((res) => {
         console.log("data", res.data);
         setLessons(res.data);

@@ -20,23 +20,21 @@ function Form({ setLessons }) {
   const addContent = (event) => {
     event.preventDefault();
     axios
-      .post("https://ldn8-islington.herokuapp.com/lessons", inputs)
+      .post("http://localhost:9003/lessons", inputs)
 
       .then((res) => {
         if (res.status === 200) {
-          axios
-            .get("https://ldn8-islington.herokuapp.com/lessons")
-            .then((res) => {
-              setLessons(res.data);
-              setInputs({
-                title: "",
-                img_url: "",
-                intro: "",
-                summary: "",
-                video_url: "",
-              });
-              window.location = "/teacher";
+          axios.get("http://localhost:9003/lessons").then((res) => {
+            setLessons(res.data);
+            setInputs({
+              title: "",
+              img_url: "",
+              intro: "",
+              summary: "",
+              video_url: "",
             });
+            window.location = "/teacher";
+          });
         }
       });
   };

@@ -3,7 +3,7 @@ import "./addQuestion.css";
 
 function Search({ lessons, setLessons, allLessons }) {
   const searchedLesson = (inputSearch) => {
-   return lessons.filter((lesson) =>
+    return lessons.filter((lesson) =>
       lesson.title.toLowerCase().includes(inputSearch.toLowerCase())
     );
   };
@@ -13,7 +13,7 @@ function Search({ lessons, setLessons, allLessons }) {
       <input
         className="search"
         type="text"
-        style={{maxWidth:"25%", marginRight:"1px"}}
+        style={{ maxWidth: "25%", marginRight: "1px" }}
         placeholder="Search here..."
         onChange={(event) => {
           setLessons(
